@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +10,13 @@ html,
 }
 :root {
   font-size: 14px;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+}
+
+.active {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* ROOT LAYOUT */
@@ -38,6 +45,7 @@ html,
     rgba(53, 53, 85, 1) 100%
   );
 }
+
 .root-page .header {
   grid-area: header;
   position: fixed;
@@ -63,3 +71,14 @@ html,
   }
 }
 /* END LAYOUT MEDIA */
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

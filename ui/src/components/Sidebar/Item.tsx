@@ -1,21 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useMatch } from "react-router-dom";
 import { IconType } from "react-icons";
 
 interface ItemProps {
-  linkTo: string;
+  linkName: string;
   iconComponent: IconType;
 }
 
-const Item: React.FC<ItemProps> = ({ linkTo, iconComponent }) => {
-  const Icon = iconComponent;
+const Item: React.FC<ItemProps> = ({ linkName, iconComponent }) => {
+  const match = useMatch(linkName);
+  const IconComponent = iconComponent;
+  console.log(match);
+
   return (
-    <Link to={linkTo} className=" text-gray-400">
-      <div className="pl-5 h-12 flex items-center">
-        <Icon className="w-[20px] h-[20px] mr-3" />
-        <p className="capitalize text-[16px]">{linkTo}</p>
+    <NavLink to={linkName} className="sidebar-item text-gray-400 relative block group lg:animate-appear">
+      <div
+        className={`lg:pl-7 h-[60px] lg:h-12 flex items-center justify-center lg:justify-normal transition duration-100 hover:bg-opacity-10 hover:text-white ${
+          match ? "" : "hover:bg-white"
+        }`}
+      >
+        <IconComponent className="lg:w-[18px] lg:h-[18px] w-[20px] h-[20px] lg:mr-3" />
+        <p className="hidden lg:block capitalize text-[14px]">{linkName}</p>
       </div>
-    </Link>
+      {match && (
+        <div className="bg-fuchsia-500 h-full absolute right-0 top-0 w-2 rounded-sm"></div>
+      )}
+    </NavLink>
   );
 };
 

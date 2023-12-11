@@ -13,20 +13,20 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <Logo />
-      <div className="sidebar-wrapper p-5">
+      <div className="sidebar-wrapper">
         <Section text="General" />
 
-        <Item linkTo={"dashboard"} iconComponent={Pie} />
-        <Item linkTo={"users"} iconComponent={User} />
+        <Item linkName={"dashboard"} iconComponent={Pie} />
+        <Item linkName={"users"} iconComponent={User} />
 
         <Section text="Statistics & Data" />
 
-        <Item linkTo={"sales"} iconComponent={Dollar} />
-        <Item linkTo={"performance"} iconComponent={Medal} />
+        <Item linkName={"sales"} iconComponent={Dollar} />
+        <Item linkName={"performance"} iconComponent={Medal} />
 
         <Section text="Options & Settings" />
 
-        <Item linkTo={"sales"} iconComponent={Settings} />
+        <Item linkName={"settings"} iconComponent={Settings} />
       </div>
     </div>
   );
