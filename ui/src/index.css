@@ -22,7 +22,7 @@ html,
 /* ROOT LAYOUT */
 .root-page {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 270px 1fr;
   grid-template-rows: 60px 1fr;
   grid-template-areas:
     "sidebar header"
@@ -36,7 +36,7 @@ html,
 .root-page .sidebar {
   grid-area: sidebar;
   position: fixed;
-  width: 280px;
+  width: 270px;
   height: 100%;
   background: rgb(35, 30, 43);
   background: linear-gradient(
@@ -49,7 +49,7 @@ html,
 .root-page .header {
   grid-area: header;
   position: fixed;
-  left: 280px;
+  left: 270px;
   height: 60px;
   width: 100%;
 }
@@ -72,6 +72,7 @@ html,
 }
 /* END LAYOUT MEDIA */
 
+/* ANIMATIONS */
 @keyframes appear {
   0% {
     opacity: 0;
@@ -82,3 +83,15 @@ html,
     transform: translateX(0);
   }
 }
+
+@keyframes colorize {
+  0% {
+    opacity: 0.5;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+/* ANIMATIONS END */

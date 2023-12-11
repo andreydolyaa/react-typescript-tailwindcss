@@ -5,6 +5,7 @@ export default {
     extend: {
       animation: {
         appear: "appear .2s ease-in-out 1",
+        colorize: "colorize .5s ease-in-out 1",
       },
     },
   },
