@@ -59,7 +59,7 @@ html,
 /* END ROOT LAYOUT */
 
 /* ROOT LAYOUT MEDIA */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .root-page {
     grid-template-columns: 80px 1fr;
   }

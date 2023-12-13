@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api";
 
-interface Employee {}
+export interface Employee {}
 
-interface Employees {
+export interface Employees {
   employees: Employee[];
   loading: boolean;
   error: null | string;

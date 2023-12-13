@@ -1,19 +1,24 @@
-import { getEmployees } from "../../features/employees/employeesSlice";
+import { Employee, getEmployees } from "../../features/employees/employeesSlice";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { useLoaderData } from "react-router-dom";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
-  const data = useAppSelector((state) => state.employees);
+  // const employees = useLoaderData()
+  const data: Employee = useAppSelector((state) => state.employees);
+
   useEffect(() => {
-    dispatch(getEmployees());
+    // dispatch(getEmployees());
+    // console.log(employees);
+    console.log(data);
+    
   }, []);
-  useEffect(() => {
-    console.log(data.loading, "loading");
-    console.log(data.error, "error");
-    console.log(data.employees, "employees");
-  }, [data]);
+
+  // useEffect(() => {
+  // }, [data]);
+
   return <div className="bg-gray-100"></div>;
 };
 
