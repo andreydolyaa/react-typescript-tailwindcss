@@ -1,36 +1,20 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ErrorPage from "../pages/ErrorPage";
 import NotFound from "../pages/NotFound";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Root from "./Root";
-import Users from "../pages/Users";
-import { getEmployees } from "../features/employees/employeesSlice";
-import { useAppDispatch } from "../hooks/useAppDispatch";
+import Employees from "../pages/Employees/Employees";
 
 export const MainRouter = () => {
-  const dispatch = useAppDispatch();
-  const loadEmployees = () => dispatch(getEmployees());
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "dashboard",
-          loader: loadEmployees,
-          element: <Dashboard />,
-        },
-        {
-          path: "users",
-          element: <Users />,
-        },
-      ],
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-  ]);
-  return <RouterProvider router={router} />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="employees" element={<Employees />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };

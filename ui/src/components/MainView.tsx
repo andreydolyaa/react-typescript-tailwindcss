@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const MainView = () => {
   return (
-    <div className="main-view">
+    <div className="main-view h-full">
       <Outlet />
     </div>
   );

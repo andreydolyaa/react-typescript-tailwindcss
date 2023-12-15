@@ -1,25 +1,15 @@
-import { Employee, getEmployees } from "../../features/employees/employeesSlice";
-import { useEffect } from "react";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useLoaderData } from "react-router-dom";
+import DashboardCard from "../../components/DashboardCard";
+import { RiUser3Line as User } from "react-icons/ri";
 
 const Dashboard = () => {
-  const dispatch = useAppDispatch();
-  // const employees = useLoaderData()
-  const data: Employee = useAppSelector((state) => state.employees);
-
-  useEffect(() => {
-    // dispatch(getEmployees());
-    // console.log(employees);
-    console.log(data);
-    
-  }, []);
-
-  // useEffect(() => {
-  // }, [data]);
-
-  return <div className="bg-gray-100"></div>;
+  return (
+    <div className="dashboard h-full bg-gray-50">
+      <DashboardCard title="Employees" iconComponent={User} color="purple" />
+      <DashboardCard title="Employees" iconComponent={User} color="purple" />
+      <DashboardCard title="Employees" iconComponent={User} color="purple" />
+      {/* TODO: handle grid layout ! */}
+    </div>
+  );
 };
 
 export default Dashboard;
