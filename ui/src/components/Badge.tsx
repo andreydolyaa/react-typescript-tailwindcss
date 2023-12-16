@@ -22,7 +22,7 @@ const Badge: React.FC<BadgeProps> = ({ title, subtitle, color, iconComponent }) 
       )}
       <div className="ml-4 flex flex-col justify-between">
         <p className="text-[15px] text-gray-600 font-medium">{title}</p>
-        <p className="text-[11px] text-gray-400">{subtitle}</p>
+        <p className="text-[12px] text-gray-400">{subtitle}</p>
       </div>
     </div>
   );
