@@ -7,12 +7,14 @@ const StatisticsCard = () => {
     <DashboardCard gridPosition={"4"}>
       <div className="flex items-center">
         <Badge
-          title="Employees"
-          subtitle="Employees Subtitle"
+          title="Employees Data"
+          subtitle="Most profitable employees of the month"
           iconComponent={User}
           color="#2CCBB3"
         />
-        <h1>sdfdsf</h1>
+        <div>
+
+        </div>
       </div>
     </DashboardCard>
   );

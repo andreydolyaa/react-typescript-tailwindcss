@@ -1,6 +1,6 @@
 // import DashboardCard from "../../components/DashboardCards/DashboardCard";
 // import { RiUser3Line as User } from "react-icons/ri";
-import DashboardGraph from "../../components/DashboardGraph";
+import DashboardGraph from "../../components/DashboardCards/DashboardGraph";
 // import Badge from "../../components/Badge";
 import StatisticsCard from "../../components/DashboardCards/StatisticsCard";
 import ProfitCard from "../../components/DashboardCards/ProfitCard";

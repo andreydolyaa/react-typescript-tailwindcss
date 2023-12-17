@@ -1,4 +1,4 @@
-import { RiUser3Line as User } from "react-icons/ri";
+import { RiShakeHandsLine as Hands } from "react-icons/ri";
 import DashboardCard from "./DashboardCard";
 import Badge from "../Badge";
 
@@ -8,11 +8,11 @@ const EarningReportsCard = () => {
       <div className="flex items-center">
         <Badge
           title="Earning Reports"
-          subtitle="Earning Reports Subtitle"
-          iconComponent={User}
-          color="#2CCBB3"
+          subtitle="latest closed deals"
+          iconComponent={Hands}
+          color="#00E4DA"
         />
-        <h1>sdfdsf</h1>
+        <div></div>
       </div>
     </DashboardCard>
   );

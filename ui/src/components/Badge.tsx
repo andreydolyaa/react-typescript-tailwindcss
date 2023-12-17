@@ -20,8 +20,8 @@ const Badge: React.FC<BadgeProps> = ({ title, subtitle, color, iconComponent }) 
           <IconComponent className="h-6 w-6" style={{ color }} />
         </div>
       )}
-      <div className="ml-4 flex flex-col justify-between">
-        <p className="text-[15px] text-gray-600 font-medium">{title}</p>
+      <div className="ml-4 flex flex-col justify-between capitalize">
+        <p className="text-[16px] text-gray-600 font-medium">{title}</p>
         <p className="text-[12px] text-gray-400">{subtitle}</p>
       </div>
     </div>

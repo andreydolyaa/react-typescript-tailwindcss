@@ -30,7 +30,7 @@ const ExpensesCard = () => {
   });
   return (
     <DashboardCard gridPosition={"2"}>
-      <div className="h-full flex flex-col ">
+      <div className="h-full">
         <Badge
           title="Expenses"
           subtitle="This Month's Expenses"

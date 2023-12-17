@@ -81,6 +81,13 @@ html,
   grid-area: 3 / 3 / 3 / 4;
 }
 
+.employees-view-container {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+}
+
 /* END ROOT LAYOUT */
 
 /* ROOT LAYOUT MEDIA */
@@ -95,7 +102,7 @@ html,
     left: 80px;
   }
 }
-@media (max-width: 762px) {
+@media (max-width: 1023px) {
   .dashboard-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 230px) 400px;
@@ -138,7 +145,7 @@ html,
 }
 @keyframes appear2 {
   0% {
-    opacity: .1;
+    opacity: 0.1;
     transform: translateX(-10px);
   }
   100% {
