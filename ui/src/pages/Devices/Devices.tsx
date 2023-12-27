@@ -6,23 +6,24 @@ import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import Filter from "../../components/Filter";
 import Table from "./Table";
+import { getDevices } from "../../features/devices/devicesSlice";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
-  const { loading, error, employees } = useAppSelector((state) => state.employees);
+  const { loading, error, devices } = useAppSelector((state) => state.devices);
   useEffect(() => {
-    dispatch(getEmployees());
+    dispatch(getDevices());
   }, []);
 
   return (
     <>
       {loading && <Loading />}
       {error && <Error error={error} />}
-      {!!employees.length && (
+      {!!devices.length && (
         <div className="h-full bg-gray-50 text-black border flex items-center justify-center">
           <div className="employees-view-container h-full w-full p-5 border border-red-500">
             <Filter />
-            <Table employees={employees}/>
+            <Table devices={devices}/>
           </div>
         </div>
       )}

@@ -1,14 +1,14 @@
 import React from "react";
 import Body from "./Body";
 import Header from "./Header";
-import { Employees } from "../../features/employees/employeesSlice";
+import { Devices } from "../../features/devices/devicesSlice";
 
-const Table: React.FC<Employees> = ({ employees }) => {
+const Table: React.FC<Devices> = ({ devices }) => {
   return (
     <div className="employees-table">
       <table className="table-fixed w-full shadow-md">
         <Header />
-        <Body employees={employees} />
+        <Body devices={devices} />
       </table>
     </div>
   );

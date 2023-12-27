@@ -3,7 +3,7 @@ import ErrorPage from "../pages/ErrorPage";
 import NotFound from "../pages/NotFound";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Root from "./Root";
-import Employees from "../pages/Employees/Employees";
+import Employees from "../pages/Devices/Devices";
 
 export const MainRouter = () => {
   return (

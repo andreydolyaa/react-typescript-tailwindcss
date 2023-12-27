@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import employeesReducer from "../features/employees/employeesSlice";
+import devicesReducer from "../features/devices/devicesSlice";
 
 const store = configureStore({
   reducer: {
     employees: employeesReducer,
+    devices: devicesReducer,
   },
 });
 

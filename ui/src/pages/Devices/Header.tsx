@@ -5,11 +5,11 @@ const Header = () => {
     <thead className="h-16 bg-white rounded-md">
       <tr>
         <th className="w-16 text-center">[]</th>
-        <th className="table-th">Name</th>
-        <th className="table-th">ID</th>
-        <th className="table-th">Position</th>
-        <th className="table-th">Email</th>
-        <th className="table-th">Phone Number</th>
+        <th className="table-th">Identifier</th>
+        <th className="table-th">User Name</th>
+        <th className="table-th">Host Name</th>
+        <th className="table-th">IP</th>
+        <th className="table-th">Up Time</th>
         <th className="w-16 text-center">...</th>
       </tr>
     </thead>
