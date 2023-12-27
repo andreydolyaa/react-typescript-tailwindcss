@@ -49,6 +49,9 @@ class Server {
       throw error;
     }
   }
+  send(message: any) {
+    this.wsServer.send(message);
+  }
 }
 
 export default Server;

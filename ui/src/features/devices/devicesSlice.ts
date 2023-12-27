@@ -52,7 +52,22 @@ export const initialState: Devices & LoadingError = {
 export const devicesSlice = createSlice({
   name: "devices",
   initialState,
-  reducers: {},
+  reducers: {
+    deviceUpdate: (state, { payload }) => {
+      const updated = state.devices.map((device) => {
+        if (device._id === payload._id) {
+          return { ...device, ...payload };
+        }
+        return device;
+      });
+
+      if (!state.devices.some((device) => device._id === payload._id)) {
+        updated.push(payload);
+      }
+
+      return { ...state, devices: updated };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getDevices.pending, (state) => {
@@ -70,5 +85,5 @@ export const devicesSlice = createSlice({
       });
   },
 });
-
+export const { deviceUpdate } = devicesSlice.actions;
 export default devicesSlice.reducer;

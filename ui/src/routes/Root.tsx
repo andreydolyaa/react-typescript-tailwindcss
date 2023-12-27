@@ -4,30 +4,24 @@ import MainView from "../components/MainView";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-// import { useAppDispatch } from "../hooks/useAppDispatch";
-// import { useAppSelector } from "../hooks/useAppSelector";
-// import { createWebSocketConnection, sendWebSocketMessage } from "../services/websocket";
-// import { closeConnection } from "../features/websocket/websocketSlice";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 
 const Root = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  // const dispatch = useAppDispatch();
-  // const { connection, isConnected } = useAppSelector((state) => state.websocket);
 
-  // useEffect(() => {
-  //   let socket: WebSocket | null;
+  useEffect(() => {
+    dispatch({
+      type: "WEBSOCKET_CONNECT"
+    })
+    // return () => {
+    //   dispatch({
+    //     type: "WEBSOCKET_DISCONNECT"
+    //   })
+    // }
+  },[])
 
-  //   if (!isConnected) {
-  //     socket = createWebSocketConnection(dispatch);
-  //   }
-  //   return () => {
-  //     if (socket) {
-  //       socket.close();
-  //       dispatch(closeConnection());
-  //     }
-  //   };
-  // }, [dispatch, isConnected]);
 
   useEffect(() => {
     if (location.pathname === "/") {

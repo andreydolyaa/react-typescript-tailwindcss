@@ -1,16 +1,14 @@
-import { configureStore, Tuple } from "@reduxjs/toolkit";
+import { configureStore, Middleware } from "@reduxjs/toolkit";
 import devicesReducer from "../features/devices/devicesSlice";
-import websocketReducer from "../features/websocket/websocketSlice";
-// import websocketMiddleware from "./middleware/websocketMiddleware";
+import createWebsocketMiddleware from "./middleware/websocketMiddleware";
+
+const middleware: Middleware[] = [createWebsocketMiddleware()];
 
 const store = configureStore({
   reducer: {
     devices: devicesReducer,
-    websocket: websocketReducer,
   },
-  // middleware: (getDefaultMiddleware) =>
-  //   getDefaultMiddleware({ serializableCheck: false }),
-  // // middleware: () => new Tuple(websocketMiddleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

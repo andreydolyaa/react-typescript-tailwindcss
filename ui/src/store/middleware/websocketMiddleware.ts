@@ -1,29 +1,50 @@
-// import { MiddlewareAPI } from "@reduxjs/toolkit";
-// import {
-//   connectWebSocket,
-//   disconnectWebSocket,
-//   sendWebSocketMessage,
-// } from "../../features/websocket/websocketSlice";
+import { Middleware } from "redux";
+import { WS_URL } from "../../baseUrl";
+import store from "../store";
+import { deviceUpdate } from "../../features/devices/devicesSlice";
 
-// export const websocketMiddleware =
-//   (store: MiddlewareAPI) => (next: any) => (action: any) => {
-//     switch (action.type) {
-//       case connectWebSocket.type:
-//         store.dispatch(connectWebSocket());
-//         break;
+const createWebsocketMiddleware = (): Middleware => {
+  let socket: WebSocket | null = null;
 
-//       case sendWebSocketMessage.type:
-//         store.dispatch(sendWebSocketMessage(action.payload));
-//         break;
+  return (store) => (next: any) => (action: any) => {
+    switch (action.type) {
+      case "WEBSOCKET_CONNECT":
+        if (!socket) {
+          socket = new WebSocket(`${WS_URL}?identifier=UI`);
 
-//       case disconnectWebSocket.type:
-//         store.dispatch(disconnectWebSocket());
-//         break;
+          socket.onopen = () => {
+            console.log("Connection opened");
+          };
 
-//       default:
-//         break;
-//     }
-//     return next(action);
-//   };
+          socket.onmessage = (message: MessageEvent<any>) => {
+            const data = JSON.parse(message.data);
+            if (data.type === "DEVICE_UPDATE") {
+              store.dispatch(deviceUpdate(data.message));
+            }
+          };
 
-// export default websocketMiddleware;
+          socket.onclose = () => {
+            console.log("Socket closed");
+          };
+        }
+        break;
+
+      case "WEBSOCKET_DISCONNECT":
+        socket?.close();
+        break;
+
+      case "WEBSOCKET_SEND":
+        if (socket && socket.readyState === WebSocket.OPEN) {
+          socket.send(JSON.stringify(action.payload));
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return next(action);
+  };
+};
+
+export default createWebsocketMiddleware;

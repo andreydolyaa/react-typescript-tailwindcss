@@ -2,8 +2,6 @@ import React from "react";
 import { Devices } from "../../features/devices/devicesSlice";
 
 const Body: React.FC<Devices> = ({ devices }) => {
-  // console.log(devices);
-  
   return (
     <tbody className="">
       {devices.map((device, index) => {
@@ -14,6 +12,7 @@ const Body: React.FC<Devices> = ({ devices }) => {
           >
             <td className="table-td text-center">[]</td>
             <td>{device.deviceIdentifier}</td>
+            <td>{device.connected ? "connected" : "disconnected"}</td>
             <td>{device.userInfo.username}</td>
             <td>{device.hostName}</td>
             <td>{device.ipAddress}</td>

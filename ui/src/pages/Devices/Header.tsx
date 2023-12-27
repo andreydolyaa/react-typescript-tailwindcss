@@ -6,6 +6,7 @@ const Header = () => {
       <tr>
         <th className="w-16 text-center">[]</th>
         <th className="table-th">Identifier</th>
+        <th className="table-th">connected    </th>
         <th className="table-th">User Name</th>
         <th className="table-th">Host Name</th>
         <th className="table-th">IP</th>
