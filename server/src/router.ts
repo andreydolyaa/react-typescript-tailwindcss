@@ -1,8 +1,8 @@
 import express from "express";
-import employeeRoutes from "./routes/employeeRoutes";
+import deviceRoutes from "./routes/deviceRoutes";
 
 const router = express.Router();
 
-router.use("/api", employeeRoutes);
+router.use("/api", deviceRoutes);
 
 export default router;
