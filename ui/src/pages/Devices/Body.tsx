@@ -2,7 +2,7 @@ import React from "react";
 import { Devices } from "../../features/devices/devicesSlice";
 
 const Body: React.FC<Devices> = ({ devices }) => {
-  console.log(devices);
+  // console.log(devices);
   
   return (
     <tbody className="">

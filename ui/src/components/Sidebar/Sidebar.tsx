@@ -2,10 +2,10 @@ import Logo from "../../components/Logo";
 import Item from "./Item";
 import {
   RiPieChart2Line as Pie,
-  RiUser3Line as User,
-  RiMoneyDollarCircleLine as Dollar,
+  RiComputerLine as Computer,
+  RiAlarmWarningLine as Alarm,
   RiSettings3Line as Settings,
-  RiAwardLine as Medal,
+  RiLineChartLine as Chart,
 } from "react-icons/ri";
 import Section from "./Section";
 
@@ -16,11 +16,11 @@ const Sidebar = () => {
       <div className="sidebar-wrapper">
         <Section text="General" />
         <Item linkName={"dashboard"} iconComponent={Pie} />
-        <Item linkName={"employees"} iconComponent={User} />
+        <Item linkName={"devices"} iconComponent={Computer} />
 
-        <Section text="Statistics & Data" />
-        <Item linkName={"sales"} iconComponent={Dollar} />
-        <Item linkName={"performance"} iconComponent={Medal} />
+        <Section text="Alerts & Monitoring" />
+        <Item linkName={"Alerts"} iconComponent={Alarm} />
+        <Item linkName={"Monitoring"} iconComponent={Chart} />
 
         <Section text="Options & Settings" />
         <Item linkName={"settings"} iconComponent={Settings} />
