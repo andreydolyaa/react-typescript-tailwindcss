@@ -22,7 +22,7 @@ const Dashboard = () => {
         <div className="h-full bg-gray-50 text-black border flex items-center justify-center">
           <div className="employees-view-container h-full w-full p-5 border border-red-500">
             <Filter />
-            <Table />
+            <Table employees={employees}/>
           </div>
         </div>
       )}

@@ -13,6 +13,13 @@ html,
   font-family: "Open Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+.table-th {
+  @apply text-left;
+}
+.table-td {
+  @apply h-16;
+}
+
 .active {
   color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.1) !important;

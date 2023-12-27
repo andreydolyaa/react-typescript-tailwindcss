@@ -2,10 +2,25 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api";
 import { AxiosError } from "axios";
 
-export interface Employee {}
+export interface Employee {
+  firstName: string;
+  lastName: string;
+  age: number;
+  gender: string;
+  email: string;
+  address: string;
+  phone: string;
+  position: string;
+  salary: number;
+  startDate: string;
+  id: string
+}
 
 export interface Employees {
   employees: Employee[];
+}
+
+export interface LoadingError {
   loading: boolean;
   error: null | string;
 }
@@ -25,7 +40,7 @@ export const getEmployees = createAsyncThunk("getEmployees", async () => {
   }
 });
 
-const initialState: Employees = {
+const initialState: Employees & LoadingError = {
   employees: [],
   loading: false,
   error: null,

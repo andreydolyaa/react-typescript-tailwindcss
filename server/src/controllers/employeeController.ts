@@ -7,7 +7,7 @@ import { sleep } from "../utils/utils";
 export const getEmployees: Controller = async (req, res, next) => {
   try {
     const data: IEmployee[] = await Employee.find({});
-    await sleep(2000);
+    // await sleep(2000);
     // throw new Error()
     res.status(200).send(data);
   } catch (error) {
