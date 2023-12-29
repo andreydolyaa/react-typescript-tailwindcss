@@ -3,7 +3,7 @@ import api from "../../api";
 import { AxiosError } from "axios";
 import { LoadingError, ErrorBase } from "../employees/employeesSlice";
 
-export interface Device {
+export interface DeviceInterface {
   type: string;
   deviceIdentifier: string;
   osVersion: String;
@@ -29,8 +29,8 @@ export interface Device {
   _id: any;
 }
 
-export interface Devices {
-  devices: Device[];
+export interface DevicesInterface {
+  devices: DeviceInterface[];
 }
 
 export const getDevices = createAsyncThunk("getDevice", async () => {
@@ -43,7 +43,7 @@ export const getDevices = createAsyncThunk("getDevice", async () => {
   }
 });
 
-export const initialState: Devices & LoadingError = {
+export const initialState: DevicesInterface & LoadingError = {
   devices: [],
   loading: false,
   error: null,

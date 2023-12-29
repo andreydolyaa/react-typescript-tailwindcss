@@ -7,6 +7,7 @@ import Error from "../../components/Error";
 import Filter from "../../components/Filter";
 import Table from "./Table";
 import { getDevices } from "../../features/devices/devicesSlice";
+import DeviceCard from "./DeviceCard";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
@@ -21,9 +22,15 @@ const Dashboard = () => {
       {error && <Error error={error} />}
       {!!devices.length && (
         <div className="h-full bg-gray-50 text-black border flex items-center justify-center">
-          <div className="employees-view-container h-full w-full p-5 border border-red-500">
+          <div className="devices-view-container h-full w-full px-[30px] min-[1441px]:px-0 border border-red-700">
             <Filter />
-            <Table devices={devices}/>
+            {/* <Table devices={devices}/> */}
+
+            <div className="devices-cards">
+              {devices.map((device) => {
+                return <DeviceCard key={device._id} device={device} />;
+              })}
+            </div>
           </div>
         </div>
       )}

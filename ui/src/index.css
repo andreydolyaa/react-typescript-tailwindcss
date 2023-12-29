@@ -88,11 +88,20 @@ html,
   grid-area: 3 / 3 / 3 / 4;
 }
 
-.employees-view-container {
+.devices-view-container {
   max-width: 1440px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
+  /* gap:30px; */
+  .devices-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+    .device-card {
+      height: 180px;
+    }
+  }
 }
 
 /* END ROOT LAYOUT */
