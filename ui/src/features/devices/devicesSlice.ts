@@ -18,9 +18,12 @@ export interface DeviceInterface {
   hostName: String;
   homeDir: String;
   sessionId: String;
-  cpus: [Object];
+  cpus: any;
   networkInterfaces: Object;
-  cpuUsage: Object;
+  cpuUsage: {
+    user: number,
+    system: number
+  };
   nodeProcessUpTime: Number;
   ipAddress: String;
   connected: Boolean;

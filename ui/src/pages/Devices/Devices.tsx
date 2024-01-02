@@ -22,7 +22,7 @@ const Dashboard = () => {
       {error && <Error error={error} />}
       {!!devices.length && (
         <div className="h-full bg-gray-50 text-black border flex items-center justify-center">
-          <div className="devices-view-container h-full w-full px-[30px] min-[1441px]:px-0 border border-red-700">
+          <div className="devices-view-container h-full w-full px-[30px] min-[1441px]:px-0">
             <Filter />
             {/* <Table devices={devices}/> */}
 

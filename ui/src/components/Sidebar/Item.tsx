@@ -17,8 +17,8 @@ const Item: React.FC<ItemProps> = ({ linkName, iconComponent }) => {
       className="sidebar-item text-gray-400 relative block group lg:animate-appear"
     >
       <div
-        className={`lg:pl-7 h-[60px] lg:h-12 flex items-center justify-center lg:justify-normal transition duration-100 hover:bg-opacity-10 hover:text-white ${
-          match ? "" : "hover:bg-white"
+        className={`lg:pl-7 h-[60px] lg:h-12 flex items-center justify-center lg:justify-normal transition duration-100 hover:bg-opacity-20 hover:text-white ${
+          match ? "" : "hover:bg-black"
         }`}
       >
         <IconComponent className="lg:w-[18px] lg:h-[18px] w-[20px] h-[20px] lg:mr-3" />
