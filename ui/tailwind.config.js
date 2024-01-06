@@ -10,6 +10,7 @@ export default {
       },
       colors: {
         mainColor: "rgb(217 70 239)",
+        cardColor: "#2A2D3E"
       },
     },
   },

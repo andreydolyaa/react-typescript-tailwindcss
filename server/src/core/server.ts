@@ -43,7 +43,7 @@ class Server {
   async start() {
     try {
       this.server.listen(this.port, this.host, () =>
-        console.log("server started: ", this.port)
+        console.log("server started: ", `https://${this.host}:${this.port}`)
       );
     } catch (error) {
       throw error;

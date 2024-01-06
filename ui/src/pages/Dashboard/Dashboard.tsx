@@ -11,7 +11,7 @@ import EarningReportsCard from "../../components/DashboardCards/EarningReportsCa
 
 const Dashboard = () => {
   return (
-    <div className="dashboard h-full bg-gray-100 flex items-center justify-center">
+    <div className="dashboard h-full flex items-center justify-center">
       <div className="dashboard-container h-full w-full p-5">
         <ProfitCard />
         <ExpensesCard />

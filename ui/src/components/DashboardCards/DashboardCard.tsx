@@ -8,7 +8,7 @@ interface DashboardCardProps {
 const DashboardCard: React.FC<DashboardCardProps> = ({ gridPosition, children }) => {
   return (
     <div
-      className={`dashboard-card-${gridPosition} bg-white rounded-md shadow p-5 animate-appear2`}
+      className={`dashboard-card-${gridPosition} bg-cardColor rounded-md shadow p-5 animate-appear2`}
     >
       {children}
     </div>
