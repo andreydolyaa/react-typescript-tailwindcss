@@ -18,11 +18,11 @@ const ExpensesCard = () => {
     },
   ]);
   const chartOptions = useChartOptions({
-    type: "line",
+    type: "area",
     labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
     lineColors: ["#FF9B00"],
     lineWidth: 2,
-    pointsWidth: 4,
+    pointsWidth: 3,
     curve: "smooth",
     pointShape: "circle",
     xaxisShowLabels: true,

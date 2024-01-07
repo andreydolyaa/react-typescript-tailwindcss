@@ -1,4 +1,5 @@
 import { ApexOptions } from "apexcharts";
+import { hexToRgba } from "../utils/utils";
 
 interface ChartOptions {
   type: string;
@@ -23,6 +24,8 @@ export const useChartOptions = ({
   xaxisShowLabels,
   yaxisShowLabels,
 }: ChartOptions): ApexOptions => {
+  const rgba = hexToRgba(lineColors[0]);
+
   const options: ApexOptions = {
     chart: {
       type: <ApexChart["type"]>type,
@@ -38,7 +41,16 @@ export const useChartOptions = ({
     yaxis: {
       labels: { show: yaxisShowLabels, style: { colors: "#9BA3AF", fontSize: "10px" } },
     },
-    grid: { show: false },
+    grid: {
+      borderColor: `rgba(${rgba.r},${rgba.g},${rgba.b},0.1)`,
+      yaxis: { lines: { show: false } },
+      xaxis: { lines: { show: true } },
+      position: "back",
+      column: {
+        colors: undefined,
+        opacity: 0.1,
+      },
+    },
     stroke: {
       show: true,
       curve: <ApexStroke["curve"]>curve,
@@ -52,14 +64,24 @@ export const useChartOptions = ({
       enabled: true,
       followCursor: true,
       custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-        return `<div class="bg-gray-200 py-1 px-4 text-[10px]">$${series[seriesIndex][dataPointIndex]}</div>`;
+        return `<div class="bg-cardColor py-1 px-4 text-[10px]">$${series[seriesIndex][dataPointIndex]}</div>`;
       },
     },
     markers: {
       size: pointsWidth,
+      strokeWidth: 0,
       shape: <ApexMarkerShape>pointShape,
       colors: <ApexMarkers["colors"]>lineColors,
     },
+    // fill: {
+    //   type: 'gradient',
+    //   gradient: {
+    //     shadeIntensity: 1,
+    //     opacityFrom: 0.7,
+    //     opacityTo: 0.9,
+    //     stops: [0, 100]
+    //   }
+    // },
   };
   return options;
 };

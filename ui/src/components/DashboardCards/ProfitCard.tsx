@@ -15,11 +15,11 @@ const ProfitCard = () => {
     },
   ]);
   const chartOptions = useChartOptions({
-    type: "line",
+    type: "area",
     labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-    lineColors: ["#6B2CCB", "#BFBFBF"],
+    lineColors: ["#FF007C"],
     lineWidth: 3,
-    pointsWidth: 7,
+    pointsWidth: 5,
     curve: "smooth",
     pointShape: "square",
     xaxisShowLabels: true,
@@ -33,7 +33,7 @@ const ProfitCard = () => {
           title="Profit"
           subtitle="This Month's Weekly Profits"
           iconComponent={Money}
-          color="#6B2CCB"
+          color="#FF007C"
         />
         <div className="">
           <ReactApexChart options={chartOptions} series={chartSeries} height={"100%"} />
